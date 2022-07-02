@@ -13,9 +13,9 @@ library(zeallot)
 library(microbenchmark)
 library(RandomFields)
 library(extRemes)
+library(emcmc)
 
 rm(list = ls())
-devtools::load_all(here("emcmc"))
 
 RFoptions(spConform = F)
 set.seed(1)
@@ -96,6 +96,7 @@ obs_ll <- function(param, data) {
       ll <- RandomFields::RFlikelihood(model = model,
                                        x = data$x,
                                        data = Z)$loglikelihood
+      # Jacobian Term
       ll <- ll + sum(extRemes::devd(data$Y,
                                     loc = gev_loc,
                                     scale = gev_scale,
