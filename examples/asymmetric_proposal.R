@@ -3,6 +3,7 @@ library(here)
 library(purrr)
 library(dplyr)
 library(microbenchmark)
+library(emcmc)
 
 ##
 ## Base proposal to be copied for beta and sigma_sq
@@ -42,8 +43,8 @@ data <- list(X = X,
 priors <- list(
   beta = Normal$new(mean = c(0, 0),
                     sd = 100),
-  sigma_sq_y = InvGamma$new(ig_shape = 0.01,
-                            ig_scale = 1)
+  sigma_sq_y = InvGamma$new(shape = 0.01,
+                            scale = 1)
 )
 
 ##

@@ -98,7 +98,7 @@ ll <- LogLik$new(cll_list = list(gp_cll))
 
 # Priors ------------------------------------------------------------------
 priors <- list(
-  gp_var =  InvGamma$new(ig_shape = 1, ig_scale = 0.1),
+  gp_var =  InvGamma$new(shape = 1, scale = 0.1),
   gp_scale = Normal$new(mean = 0, sd = 5),       # Half-normal (constrained below at zero in ll)
   gp_smooth = Normal$new(mean = 0, sd = 0.75),   # Half-normal (constrained below at zero in ll)
   beta = Normal$new(mean = 0, sd = 10)

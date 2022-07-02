@@ -5,6 +5,7 @@ library(dplyr)
 library(zeallot)
 library(microbenchmark)
 library(RandomFields)
+library(emcmc)
 
 RFoptions(spConform = F)
 

@@ -6,6 +6,7 @@ library(zeallot)
 library(microbenchmark)
 library(RandomFields)
 library(extRemes)
+library(emcmc)
 
 RFoptions(spConform = F)
 

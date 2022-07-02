@@ -4,6 +4,7 @@ library(purrr)
 library(dplyr)
 library(zeallot)
 library(microbenchmark)
+library(emcmc)
 
 ########################################################################
 ## Model
@@ -41,7 +42,7 @@ r_obs <- function(){
   )
   )
 }
-c(data, gt_param) %<-% r_obs()
+c(data, gt) %<-% r_obs()
 
 
 ##
@@ -50,10 +51,10 @@ c(data, gt_param) %<-% r_obs()
 priors <- list(
   mu = Normal$new(mean = c(0),
                   sd = 10),
-  sigma_sq_y = InvGamma$new(ig_shape = 1,
-                            ig_scale = 0.1),
-  sigma_sq_bg = InvGamma$new(ig_shape = 1,
-                             ig_scale = 0.1)
+  sigma_sq_y = InvGamma$new(shape = 1,
+                            scale = 0.1),
+  sigma_sq_bg = InvGamma$new(shape = 1,
+                             scale = 0.1)
 )
 
 ##
