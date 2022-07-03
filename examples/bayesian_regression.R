@@ -88,3 +88,4 @@ cowplot::plot_grid(plotlist = plts, nrow = 2)
 # Traceplots
 plts <- sampler$plot_post_trace()
 cowplot::plot_grid(plotlist = plts, nrow = 2)
+
