@@ -4,6 +4,7 @@ library(purrr)
 library(dplyr)
 library(microbenchmark)
 library(emcmc)
+# devtools::load_all(here('emcmc'))
 
 ##
 ## Base proposal to be copied for beta and sigma_sq

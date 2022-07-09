@@ -6,6 +6,7 @@ library(lobstr)        # For object sizes
 library(microbenchmark)
 library(zeallot)
 library(emcmc)
+# devtools::load_all(here('emcmc'))
 
 set.seed(1)
 
